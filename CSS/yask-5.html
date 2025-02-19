@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Styled Page</title>
+    <style>
+        body {
+            background-color: #cccc55;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container {
+            background-color: #cccc55;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: purple;
+            font-size: 24px;
+        }
+        .sidebar {
+            width: 150px;
+            float: left;
+        }
+        .sidebar a {
+            display: block;
+            background: white;
+            color: blue;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 20px;
+            border-left: 10px solid black;
+        }
+        .content {
+            margin-left: 170px;
+        }
+        .footer {
+            font-style: italic;
+            margin-top: 20px;
+            border-top: 1px solid black;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My first styled page</h1>
+        <div class="sidebar">
+            <a href="#">Home page</a>
+            <a href="#">Musings</a>
+            <a href="#">My town</a>
+            <a href="#">Links</a>
+        </div>
+        <div class="content">
+            <p>Welcome to my styled page!</p>
+            <p>It lacks images, but at least it has style. And it has links, even if they don't go anywhere...</p>
+            <p>There should be more here, but I don't know what yet.</p>
+            <div class="footer">Made 5 April 2004<br>by myself.</div>
+        </div>
+    </div>
+</body>
+</html>

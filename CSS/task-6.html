@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left; /* Align all text to the left */
+        }
+        .login-container img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Center the image */
+        }
+        .login-container h3 {
+            margin: 10px 0 5px 0; /* Adjust heading margins */
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0; /* Add spacing below inputs */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .login-btn {
+            background: green;
+            margin-top: 10px;
+        }
+        .cancel-btn {
+            background: red;
+            margin-top: 7px;
+            width: 10px; /* Make the cancel button smaller */
+            padding: 8px 20px; /* Adjust padding */
+            display: inline-block; /* Allow it to shrink */
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 10px 0; /* Add spacing around checkbox */
+        }
+        .checkbox-container input {
+            width: auto; /* Reset width for checkbox */
+            margin: 0 10px 0 0; /* Adjust margin */
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+        .footer a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="profile.jpg" alt="User Image">
+        <h3>Username</h3>
+        <input type="text" placeholder="Enter Username">
+        <h3>Password</h3>
+        <input type="password" placeholder="Enter Password">
+        <button class="login-btn">Login</button>
+        <div class="checkbox-container">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+        </div>
+        <button class="cancel-btn">Cancel</button>
+        <div class="footer">
+            <span></span>
+            <a href="#">Forgot <b>password?</b></a>
+        </div>
+    </div>
+</body>
+</html>

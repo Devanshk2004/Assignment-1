@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .logo {
+            width: 60%;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+        .password-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login-btn:disabled {
+            background-color: #b2dffc;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .signup {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .signup a {
+            color: #3897f0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="logo">
+        
+        <input type="text" id="username" class="input-box" placeholder="Username" required>
+        <p id="usernameError" class="error"></p>
+        
+        <div class="password-container">
+            <input type="password" id="password" class="input-box" placeholder="Password" required>
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        </div>
+        <p id="passwordError" class="error"></p>
+
+        <button class="login-btn" id="loginBtn" onclick="validateLogin()" disabled>Log In</button>
+
+        <div class="signup">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            let passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
+        function validateLogin() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let usernameError = document.getElementById("usernameError");
+            let passwordError = document.getElementById("passwordError");
+
+            usernameError.innerText = "";
+            passwordError.innerText = "";
+
+            if (username.length < 4) {
+                usernameError.innerText = "Username must be at least 4 characters";
+                return;
+            }
+
+            if (password.length < 6) {
+                passwordError.innerText = "Password must be at least 6 characters";
+                return;
+            }
+
+            alert("Login successful!");
+        }
+
+        document.querySelectorAll(".input-box").forEach(input => {
+            input.addEventListener("input", function () {
+                let username = document.getElementById("username").value;
+                let password = document.getElementById("password").value;
+                let loginBtn = document.getElementById("loginBtn");
+
+                loginBtn.disabled = !(username.length >= 4 && password.length >= 6);
+            });
+        });
+    </script>
+
+</body>
+</html>
